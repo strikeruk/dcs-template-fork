@@ -29,7 +29,7 @@ origin/stable to always represent the latest code deployed to production.
 Feature Branches:
 	Must branch from: master
 	Must merge back into: master
-	Branch naming convention: feature-<tbd number>
+	Branch naming convention: feature-name/id number
 	
 For bug fixes
-	Branch naming convention: bug-<tbd number>
+	Branch naming convention: bug-number
