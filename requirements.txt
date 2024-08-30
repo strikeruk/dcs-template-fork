@@ -2,3 +2,9 @@ numpy
 scipy
 pandas
 scikit-learn
+Flask
+Django
+gunicorn
+requests
+
+# Java script package managers like npm or yarn.

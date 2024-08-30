@@ -1,0 +1,29 @@
+{
+    "name": "dcs",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0",
+      "react-scripts": "4.0.3",
+      "@material-ui/core": "^5.0.0",
+      "bootstrap": "^5.0.0",
+      "vue": "^3.0.0",
+      "angular": "^15.0.0",  // Note: Angular is often managed separately from other front-end frameworks
+      "typescript": "^4.0.0",
+      "axios": "^0.21.1" // Example of an HTTP client for making requests
+    },
+    "devDependencies": {
+      "@types/react": "^18.0.0",
+      "@types/react-dom": "^18.0.0",
+      "typescript": "^4.0.0"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    }
+  }
+  
+  
