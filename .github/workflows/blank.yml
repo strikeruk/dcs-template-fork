@@ -1,0 +1,51 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see link
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+name: Python application CI pytest and upload artifacts.
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+jobs:
+  build:  
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.10" ]  # Specify the version of Python (or) set of versions.)
+        
+    steps:
+    - uses: actions/checkout@v4    
+    - name: Set environment variable
+      run: echo "FORCE_JAVASCRIPT_ACTIONS_TO_NODE20=true" >> $GITHUB_ENV    
+    - name: Run a script
+      run: node -e 'console.log(process.env.FORCE_JAVASCRIPT_ACTIONS_TO_NODE20)'      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+    - name: Display Python version
+      run: |
+        python -c "import sys; print(sys.version)"
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Test python program
+      run: |        
+        run: echo Hello, world! >> output.txt
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-${{ matrix.python-version }}
+        path: output.txt
+      # Use always() to always run this step to publish test results when there are test failures
+      if: ${{ always() }}
