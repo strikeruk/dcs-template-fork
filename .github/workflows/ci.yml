@@ -41,7 +41,6 @@ jobs:
     - name: Test python program
       run: echo "Hello World!" >> output.txt
       
-        
     - name: Upload test results
       uses: actions/upload-artifact@v4
       with:
