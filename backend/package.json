@@ -21,7 +21,7 @@
     "mocha": "^10.2.0",
     "chai": "^4.3.7",
     "supertest": "^6.3.3",
-    "eslint": "^8.40.0" // Example linting tool, adjust version as needed
+    "eslint": "^8.40.0" 
   },
   "engines": {
     "node": ">=16.0.0"
