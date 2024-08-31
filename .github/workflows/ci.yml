@@ -47,7 +47,7 @@ jobs:
           name: python-app
           path: |
             release.zip
-            !venv/
+          # !venv/  // Enable later
 
       # - name: Upload test results
       #  uses: actions/upload-artifact@v4
