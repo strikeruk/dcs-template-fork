@@ -2,13 +2,22 @@ numpy
 scipy
 pandas
 scikit-learn
-Flask
-Django
+
 gunicorn
 requests
 pickle5
+
 streamlit
 seaborn
 matplotlib
 plotly
+
 # Java script package managers like npm or yarn.
+
+Django==4.2
+djangorestframework==3.14
+mysqlclient==2.0.3  # For MySQL
+
+Flask==2.3
+Flask-RESTful==0.3.9
+mysqlclient==2.0.3  # For MySQL
