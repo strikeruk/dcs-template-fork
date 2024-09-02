@@ -6,3 +6,5 @@ Folder structure:
 - backend/: Contains the server-side code, configuration files, and related resources.
 - frontend/: Contains the client-side code, assets, and build configurations.
 - .gitignore: Specifies files and directories that should be ignored by Git.
+
+# Sample
