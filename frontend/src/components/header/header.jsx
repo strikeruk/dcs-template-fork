@@ -2,6 +2,9 @@ import React from "react";
 import './header.css';
 import { FormControl } from '@mui/material';
 
+/** 
+ * Represents Header Code
+*/
 const Header=()=>{
     return(
         <div>
@@ -16,7 +19,6 @@ const Header=()=>{
             </div>
         </div>
     )
-
 }
 
 export default Header;
