@@ -25,5 +25,5 @@ Django
 djangorestframework
 #2.0.3
 mysqlclient
-
+pytest
 # Java script package managers like npm or yarn.
