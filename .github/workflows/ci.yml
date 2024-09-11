@@ -38,13 +38,14 @@ jobs:
         run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-      - name: Check for tests
+      - name: Check for tests, if found then run tests with pytest
         run: |
           if ! ls tests/test_*.py 1> /dev/null 2>&1; then
             echo "No test files found, skipping pytest."            
-          fi
-      - name: Run tests
-        run: pytest || exit 0       
+            exit 0
+          else
+            pytest  
+          fi      
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
