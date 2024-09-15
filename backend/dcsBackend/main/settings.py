@@ -38,7 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Adding additional apps below
+    'accounts',  # Your custom accounts app
+    'rest_framework',  # For REST API support
+    'rest_framework.authtoken',  # For token-based authentication
 ]
+
+# Add the AUTH_USER_MODEL setting here
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
