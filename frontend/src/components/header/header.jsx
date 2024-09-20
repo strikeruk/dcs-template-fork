@@ -1,24 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import './header.css';
 import { FormControl } from '@mui/material';
+import Login from '../modal/login/login.jsx'; // Adjust the import path as necessary */
+import Signup from '../modal/signup/signup.jsx'; // Adjust the import path as necessary
 
-/** 
- * Represents Header Code
-*/
-const Header=()=>{
-    return(
+/**
+ * 
+ * @returns 
+ */
+const Header = () => {
+    const [activeScreen, setActiveScreen] = useState('signup'); // 'signup'
+    //const [activeModal, setActiveModal] = useState(null); // 'login' or 'signup'
+    //const [showLogin, setShowLogin] = useState(false);
+    //const [showSignup, setShowSignup] = useState(false);
+
+    const handleLoginClick = (event) => {
+        event.preventDefault();
+        //setShowLogin(true);
+        setActiveScreen('login');
+
+    }
+
+    /*const handleSignupClick = (event) => {
+        event.preventDefault();
+        //setShowSignup(true);
+        setActiveModal('signup');
+    }
+
+    const closeSignupModal = () => {
+        setShowSignup(false);
+    } */
+       
+    /*const closeLoginModal = () => {
+        setShowLogin(false);
+    }*/
+
+    const closeLoginModal = () => {
+        setActiveScreen('signup');
+    };
+
+    /*const closeModal = () => {
+        setActiveModal(null);
+    }; */
+
+    return (
         <div>
             <div className='app__header'>
-                <h1>Documents Consultancy Services</h1>
+                <h4>Documents Consultancy Services</h4>
                 <FormControl>
-                    <a href='/login' className='app__login'>Log In</a>
-                </FormControl>
-                <FormControl>
-                    <a href='/signup' className='app__signup'>Sign Up</a>
+                    <a href='#' className='app__login' onClick={handleLoginClick}>Log In</a>
+                    {/*<a href='#' className='app__signup' onClick={handleSignupClick}>Sign Up</a>*/}
                 </FormControl>
             </div>
+            {activeScreen === 'login' ? ( <Login onClose={closeLoginModal} />) : (<Signup />)}
         </div>
-    )
+    );
 }
 
 export default Header;
