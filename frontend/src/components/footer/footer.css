@@ -1,0 +1,12 @@
+.app__footer{
+    font-size: smaller;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.app__copyright{
+    font-size: smaller;
+    background-color: bisque;
+    text-align: center;
+}
